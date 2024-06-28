@@ -57,7 +57,7 @@ const MobileNav = () => {
                                     <Link className='sidebar-link' href={link.route}>
                                         <Image
                                         src={link.icon}
-                                        alt='logo'
+                                        alt="logo"
                                         height={24}
                                         width={24}
                                         className={`${isActive && 'brightness-200'}`}
