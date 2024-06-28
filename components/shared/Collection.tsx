@@ -56,10 +56,7 @@ export const Collection = ({
       {images.length > 0 ? (
         <ul className="collection-list">
           {images.map((image) => (
-            <Card
-              image={image}
-              // key={image._id}
-            />
+            <Card image={image} key="" />
           ))}
         </ul>
       ) : (
@@ -101,7 +98,11 @@ const Card = ({ image }: { image: IImage }) => {
   let type = image.transformationType || "fill";
   return (
     <li>
-      <Link href={`/transformation/${image._id}`} className="collection-card">
+      <Link
+        href={`/transformation/${image._id}`}
+        className="collection-card"
+        key={"link"}
+      >
         <CldImage
           src={image.publicId}
           alt={image.title}
@@ -119,7 +120,7 @@ const Card = ({ image }: { image: IImage }) => {
           <Image
             src={`/assets/icons/${
               transformationTypes[
-                image?.transformationType as TransformationTypeKey || "fill"
+                (image?.transformationType as TransformationTypeKey) || "fill"
               ].icon
             }`}
             alt={image.title}
